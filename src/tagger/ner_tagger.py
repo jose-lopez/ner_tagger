@@ -147,10 +147,11 @@ def from_corpus(CORPUS_PATH):
 
 if __name__ == '__main__':
 
-    CORPUS_PATH = "data/corpus_en"
-
-    # PATTERNS_PATH = "data/patterns2.1.jsonl"
-    PATTERNS_PATH = "data/names_patterns_en.jsonl"
+    # CORPUS_PATH = "data/corpus_en"
+    CORPUS_PATH = "data/corpus_gr"
+    CORPUS_PATH = "data/corpus"
+    PATTERNS_PATH = "data/patterns2.1.jsonl"
+    # PATTERNS_PATH = "data/names_patterns_en.jsonl"
 
     measures = []
 
@@ -159,8 +160,8 @@ if __name__ == '__main__':
     print("\n" + "\n")
 
     print("Loading the model...")
-    # nlp = spacy.load("grc_ud_proiel_lg")
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load("grc_ud_proiel_lg")
+    # nlp = spacy.load("en_core_web_sm")
     print(".. done" + "\n")
 
     print("Loading the entities' patterns...")
@@ -171,6 +172,7 @@ if __name__ == '__main__':
 
     print("Processing the corpus for NER tagging.......")
     # Total of sentences in the corpus and the proportion of sentences required
+
     corpus_length, files = from_corpus(CORPUS_PATH)
 
     FILE_ON_PROCESS = 1
@@ -185,15 +187,17 @@ if __name__ == '__main__':
                 SENTENCES = [line.strip() for line in fl.readlines()]
 
             print(
-                f'..tagging NER examples for -> {file_name}: {FILE_ON_PROCESS} | {len(files)}')
+                f'..tagging entities for -> {file_name}: {FILE_ON_PROCESS} | {len(files)}')
 
             tagging_file_sentences(file_name, SENTENCES, matcher, measures)
 
             FILE_ON_PROCESS += 1
 
-            print(">>>>>>> Entities tagging finished...........")
     else:
 
-        print("No files to tag. Please check the contents in the data/corpus folder")
+        print("No files to tag. Please check the contents in the data/corpus folder" + "\n")
 
-    print(f'Reporting some measures for a total of {corpus_length} files')
+    """print(
+        f'Reporting some measures for a total of {len(files)} files (reports/measures.jsonl)' + "\n")"""
+
+    print("\n" + "\n" + ">>>>>>> Entities tagging finished...........")
