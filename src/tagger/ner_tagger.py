@@ -9,9 +9,6 @@ from pathlib import Path
 import json
 import sys
 
-from about_time import about_time
-from alive_progress import alive_bar
-from alive_progress import alive_it
 from spacy.matcher import Matcher
 from spacy.tokens import Span, DocBin
 import spacy
@@ -158,8 +155,8 @@ def from_corpus(CORPUS_PATH):
 if __name__ == '__main__':
 
     # CORPUS_PATH = "data/corpus_en"
-    CORPUS_PATH = "data/corpus_gr"
-    # CORPUS_PATH = "data/corpus"
+    # CORPUS_PATH = "data/corpus_gr"
+    CORPUS_PATH = "data/corpus"
     PATTERNS_PATH = "data/patterns2.1.jsonl"
     # PATTERNS_PATH = "data/names_patterns_en.jsonl"
 
@@ -179,8 +176,8 @@ if __name__ == '__main__':
     print(".. done" + "\n")
 
     print("Processing the corpus for NER tagging.......")
-    # Total of sentences in the corpus and the proportion of sentences required
 
+    # Total of sentences in the corpus and the list of files
     corpus_length, files = from_corpus(CORPUS_PATH)
 
     FILE_ON_PROCESS = 1
