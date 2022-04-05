@@ -72,9 +72,9 @@ def tagging_file_sentences(file_name, sentences, matcher, measures, nlp):
     file = open(
         FILE_PATH, 'w', encoding="utf8")
 
-    for sentence in sentences:
+    for doc in nlp.pipe(sentences):
 
-        doc = nlp(sentence)
+        # doc = nlp(sentence)
 
         matches = matcher(doc)
         doc.ents = []
