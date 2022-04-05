@@ -66,9 +66,11 @@ def token_from_span_in(spans, current_span):
     return already_present
 
 
-def tagging_file_sentences(file_name, sentences, matcher, measures):
+def tagging_file_sentences(file_name, sentences, matcher, measures, nlp):
 
-    FILE_PATH = "ner_tagged/" + file_name + ".jsonl"
+    FILE_PATH = "tagged/" + file_name + ".jsonl"
+
+    sentences_to_report = []
 
     file = open(
         FILE_PATH, 'w', encoding="utf8")
@@ -121,7 +123,12 @@ def tagging_file_sentences(file_name, sentences, matcher, measures):
         if not doc.ents:
             spans_ = ""
 
-        file.write(f'{{"text":"{doc.text}", "spans":[{spans_}]}}' + "\n")
+        sentences_to_report.append(
+            f'{{"text":"{doc.text}", "spans":[{spans_}]}}')
+
+        to_report = '\n'.join(s for s in sentences_to_report)
+
+    file.write(''.join(to_report))
 
     file.close()
 
@@ -151,11 +158,9 @@ if __name__ == '__main__':
 
     # CORPUS_PATH = "data/corpus_en"
     CORPUS_PATH = "data/corpus_gr"
-    CORPUS_PATH = "data/corpus"
+    # CORPUS_PATH = "data/corpus"
     PATTERNS_PATH = "data/patterns2.1.jsonl"
     # PATTERNS_PATH = "data/names_patterns_en.jsonl"
-
-    measures = []
 
     print("\n" + "\n")
     print(">>>>>>> Starting the entities tagging...........")
@@ -179,6 +184,8 @@ if __name__ == '__main__':
 
     FILE_ON_PROCESS = 1
 
+    measures = []
+
     if not len(files) == 0:
 
         for file_path in files:
@@ -191,7 +198,8 @@ if __name__ == '__main__':
             print(
                 f'..tagging entities for -> {file_name}: {FILE_ON_PROCESS} | {len(files)}')
 
-            tagging_file_sentences(file_name, SENTENCES, matcher, measures)
+            tagging_file_sentences(file_name, SENTENCES,
+                                   matcher, measures, nlp)
 
             FILE_ON_PROCESS += 1
 
