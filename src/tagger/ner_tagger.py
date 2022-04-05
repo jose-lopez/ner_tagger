@@ -99,8 +99,9 @@ def tagging_file_sentences(file_name, sentences, matcher, measures, nlp):
 
         for ent in doc.ents:
             s_text = doc[0:ent.end].text
-            start = len(s_text) - doc[ent.start].__len__()
-            end = start + doc[ent.start].__len__()
+            t_len = doc[ent.start].__len__()
+            start = len(s_text) - t_len
+            end = start + t_len
             spans.append([start, end, ent.label_])
 
         for span in spans:

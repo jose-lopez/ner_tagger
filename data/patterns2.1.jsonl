@@ -1,4 +1,3 @@
-
 {"pattern":[{"ORTH":"ἐν"},{"POS":"DET"},{"POS":"PROPN"}], "label": "WORK"}
 {"pattern":[{"ORTH":"ἐν"},{"POS":"DET"},{"POS":"ADJ","IS_TITLE":true}], "label": "WORK"}
 {"pattern":[{"ORTH":"περί", "IS_TITLE":true},{}], "label": "WORK"}
@@ -524,5 +523,4 @@
 {"pattern":[{"TEXT": {"REGEX": "Κ.λ.ν.{1,2}"}}], "label":"PLACE"}
 {"pattern":[{"POS":"ADJ","IS_TITLE":true}],"label":"GROUP"}
 {"pattern":[{"POS":"PROPN","IS_TITLE":true}],"label":"PERSON"}
-
 
