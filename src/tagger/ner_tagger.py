@@ -68,7 +68,7 @@ def token_from_span_in(spans, current_span):
 
 def tagging_file_sentences(file_name, sentences, matcher, measures):
 
-    FILE_PATH = "ner_tagged/" + file_name
+    FILE_PATH = "ner_tagged/" + file_name + ".jsonl"
 
     file = open(
         FILE_PATH, 'w', encoding="utf8")
