@@ -72,9 +72,9 @@ def tagging_file_sentences(file_name, sentences, matcher, measures, nlp):
     file = open(
         FILE_PATH, 'w', encoding="utf8")
 
-    for sentence in sentences:
+    for doc in nlp.pipe(sentences):
 
-        doc = nlp(sentence)
+        # doc = nlp(sentence)
 
         matches = matcher(doc)
         doc.ents = []
@@ -155,8 +155,8 @@ def from_corpus(CORPUS_PATH):
 if __name__ == '__main__':
 
     # CORPUS_PATH = "data/corpus_en"
-    # CORPUS_PATH = "data/corpus_gr"
-    CORPUS_PATH = "data/corpus"
+    CORPUS_PATH = "data/corpus_gr"
+    # CORPUS_PATH = "data/corpus"
     PATTERNS_PATH = "data/patterns2.1.jsonl"
     # PATTERNS_PATH = "data/names_patterns_en.jsonl"
 
