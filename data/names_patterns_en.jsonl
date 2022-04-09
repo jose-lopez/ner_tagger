@@ -9,11 +9,11 @@
 {"label":"PERSON","pattern":[{"LOWER":"great"}]}
 {"label":"PERSON","pattern":[{"LOWER":"egypt"}]}
 {"label":"PERSON","pattern":[{"LOWER":"greek"}]}
-{"pattern": [{"TEXT": "Zeus"}], "label": "GOD"}
-{"pattern": [{"TEXT": "Poseidon"}], "label": "GOD"}
-{"pattern": [{"TEXT": "Horus"}], "label": "GOD"}
-{"pattern": [{"TEXT": "Odin"}], "label": "GOD"}
-{"pattern": [{"TEXT": "Thoth"}], "label": "GOD"}  
+{"pattern": [{"TEXT": "waiter"}], "label": "WORK"}
+{"pattern": [{"TEXT": "waitress"}], "label": "WORK"}
+{"pattern": [{"TEXT": "layer"}], "label": "WORK"}
+{"pattern": [{"TEXT": "engineer"}], "label": "WORK"}
+{"pattern": [{"TEXT": "medical doctor"}], "label": "WORK"}  
 {"pattern": [{"TEXT": "Olimpics"}], "label": "GROUP"}
 {"pattern": [{"TEXT": "Titans"}], "label": "GROUP"}
 {"pattern": [{"TEXT": "Egypt"}], "label": "PLACE"}
