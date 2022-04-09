@@ -317,9 +317,9 @@ def report(measures, arguments):
     with open(path_, 'w', encoding="utf8") as fd:
 
         print(
-            "\n" + f'Reporting the list of files sorted by {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
+            "\n" + f'Reporting the list of files sorted by --> {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
         fd.write(
-            "\n" + f'Reporting the list of files sorted by {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
+            "\n" + f'Reporting the list of files sorted by --> {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
 
         print(f'Global percentages for each entity type in the corpus:' + "\n")
         fd.write(f'Global percentages for each entity type in the corpus:' + "\n")
@@ -343,14 +343,12 @@ def report(measures, arguments):
 if __name__ == '__main__':
 
     # CORPUS_PATH = "data/corpus_en"
-    CORPUS_PATH = "data/corpus_gr"
-    # CORPUS_PATH = "data/corpus"
+    # CORPUS_PATH = "data/corpus_gr"
+    CORPUS_PATH = "data/corpus"
     PATTERNS_PATH = "data/patterns2.1.jsonl"
     # PATTERNS_PATH = "data/names_patterns_en.jsonl"
 
-    print("\n" + "\n")
-    print(">>>>>>> Starting the entities tagging...........")
-    print("\n" + "\n")
+    print("\n" + ">>>>>>> Starting the entities tagging..........." + "\n")
 
     print("Loading the model...")
     nlp = spacy.load("grc_ud_proiel_lg")
@@ -389,12 +387,16 @@ if __name__ == '__main__':
 
             FILE_ON_PROCESS += 1
 
+        print("\n" +
+              "Exporting the metrics for each file (reports/measures.jsonl)")
         export_measures(measures)
+        print(".... done)")
+
+        print("\n" + ">>>>>>> Entities tagging finished...........")
 
     else:
 
         print("No files to tag. Please check the contents in the data/corpus folder" + "\n")
+        sys.exit()
 
     report(measures, sys.argv[1:])
-
-    print("\n" + "\n" + ">>>>>>> Entities tagging finished...........")

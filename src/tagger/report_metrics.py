@@ -104,9 +104,9 @@ def report(measures, arguments):
     with open(path_, 'w', encoding="utf8") as fd:
 
         print(
-            "\n" + f'Reporting the list of files sorted by {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
+            "\n" + f'Reporting the list of files sorted by --> {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
         fd.write(
-            "\n" + f'Reporting the list of files sorted by {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
+            "\n" + f'Reporting the list of files sorted by --> {sorted_by}: entity type --> {entitiy_type}' + "\n" + "\n")
 
         print(f'Global percentages for each entity type in the corpus:' + "\n")
         fd.write(f'Global percentages for each entity type in the corpus:' + "\n")
