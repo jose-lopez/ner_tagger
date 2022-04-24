@@ -1,5 +1,5 @@
 
-Reporting the list of files sorted by rate: entity type --> ALL
+Reporting the list of files sorted by --> rate: entity type --> ALL
 
 Global percentages for each entity type in the corpus:
 G_PERSON_P: 89.01098901098901    G_PLACE_P: 4.945054945054945    G_GROUP_P: 6.043956043956044    G_WORK_P: 0.0
