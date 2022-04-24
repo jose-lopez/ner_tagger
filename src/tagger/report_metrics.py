@@ -75,8 +75,7 @@ def report(measures, arguments):
 
         if entitiy_type == "ALL":
             order_by = "matches_" + sorted_by + "_local"
-            order_by = "matches_" + complement + "_local"
-
+            complement_by = "matches_" + complement + "_local"
         elif entitiy_type == "PERSON":
             order_by = "person_" + sorted_by + "_local"
             complement_by = "person_" + complement + "_local"
