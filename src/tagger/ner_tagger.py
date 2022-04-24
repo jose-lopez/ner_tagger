@@ -246,17 +246,17 @@ if __name__ == '__main__':
 
     print("\n" + ">>>>>>> Starting the entities tagging..........." + "\n")
 
-    print("Loading the model...")
+    print(f'Loading the model ({MODEL})....')
     nlp = spacy.load(MODEL)
     print(".. done" + "\n")
 
-    print("Loading the entities' patterns...")
+    print(f'Loading the patterns ({PATTERNS_PATH})....')
     matcher = Matcher(nlp.vocab)
     patterns = load_jsonl(PATTERNS_PATH)
     setting_patterns(patterns, matcher)
     print(".. done" + "\n")
 
-    print("Processing the corpus for NER tagging.......")
+    print(f'Processing the corpus ({CORPUS_PATH})....')
 
     # Total of sentences in the corpus and the its list of files
     corpus_length, files = from_corpus(CORPUS_PATH)
