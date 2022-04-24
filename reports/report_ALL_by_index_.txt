@@ -4,6 +4,6 @@
 Global percentages for each entity type in the corpus:
 G_PERSON_P: 89.0110    G_PLACE_P: 4.9451    G_GROUP_P: 6.0440    G_WORK_P: 0.0000
 
-File:                         index       rate        
-corpus_sm_2.txt               2.4062      1.0000      
-corpus_sm_1.txt               2.0192      0.9615      
+File:                      entities_index                entities_rate                 
+corpus_sm_2.txt               2.4062                        1.0000                        
+corpus_sm_1.txt               2.0192                        0.9615                        

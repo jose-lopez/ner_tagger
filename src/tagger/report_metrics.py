@@ -120,10 +120,13 @@ def report(measures, arguments):
         fd.write(
             f'G_PERSON_P: {g_person_p}    G_PLACE_P: {g_place_p}    G_GROUP_P: {g_group_p}    G_WORK_P: {g_work_p}' + "\n" + "\n")
 
+        tag_sorted_by = "entities_" + sorted_by
+        tag_complement = "entities_" + complement
+
         print(
-            f'{"File:":<30}{sorted_by:<12}{complement:<12}' + "\n")
+            f'{"File:":<27}{tag_sorted_by:<30}{tag_complement:<30}' + "\n")
         fd.write(
-            f'{"File:":<30}{sorted_by:<12}{complement:<12}' + "\n")
+            f'{"File:":<27}{tag_sorted_by:<30}{tag_complement:<30}' + "\n")
 
         for measure in measures:
 
@@ -131,9 +134,9 @@ def report(measures, arguments):
             complement_ = "{:.4f}".format(measure[complement_by])
 
             print(
-                f'{measure["file"]:<30}{measure_:<12}{complement_:<12}' + '\n')
+                f'{measure["file"]:<30}{measure_:<30}{complement_:<30}' + '\n')
             fd.write(
-                f'{measure["file"]:<30}{measure_:<12}{complement_:<12}' + '\n')
+                f'{measure["file"]:<30}{measure_:<30}{complement_:<30}' + '\n')
 
 
 if __name__ == '__main__':
