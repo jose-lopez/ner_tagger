@@ -18,7 +18,7 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 
 4. The repository has two scripts of particular interest, ner_tagger.py and report_metrics.py. Ner_tagger.py is for the  generation of tagged files (saved in the tagged folder). The report_metrics.py script is for the report of some indicators generated according to the type of entity of interest (saved in the reports folder)
 
-5. Located in the ner_tagger folder, two options can be used::
+5. Two options can be used:
 
 To tag a set of files:
 
@@ -39,7 +39,9 @@ $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<
 --sorted_by=<rate|index>: Defines the order from highest to lowest of the tagged files, either by rate or entity index.
 --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the type of entity to report. The 'ALL' option is for all kinds of entities.
 
- example:
+
+ 
+An example follows:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
