@@ -30,7 +30,7 @@ $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns
 
 example:
 
-  $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
+$ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
 
 5.2. To generate a report:
 
@@ -91,4 +91,4 @@ entities_rate = 2 /10 = 0.2 (average sentences with entities relative to the tot
 
 In the example above the first value talks about how present (on average) the entities are. In this case there is an average of 1.2 entities per sentence. The second value talks about how distributed the entities are in the sentences; that is, what is the proportion of sentences in the file that have entities.
 
-7. The reports are saved in the ner_tagger/reports folder. The report name indicates the kind of entity and metric requested, for example: report_ALL_by_index.txt or report_PERSON_by_rate.txt.
+5. The reports are saved in the ner_tagger/reports folder. The report name indicates the kind of entity and metric requested, for example: report_ALL_by_index.txt or report_PERSON_by_rate.txt.
