@@ -1,4 +1,4 @@
-We describe here the execution of some python scripts, related to the NER tagging of certain types of entities in files written in Ancient Greek. The type of entities that are tagged are: person, place, group and work. Provided a collection of files, another collection of labeled files is generated. The aim here is to generate suitable files to support the fine tuning of models based on Transformers.
+We describe here the execution of some python scripts, related to the NER tagging of certain types of entities in files written in Ancient Greek. The type of entities that are tagged are: person, place, group and work. Provided a collection of files, another collection of tagged files is generated. The aim here is to generate suitable files to support the fine tuning of models based on Transformers.
 
 Requirements::
 
