@@ -20,7 +20,7 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 
 5. Located in the ner_tagger folder, two options can be used::
 
-5.1. To tag a set of files:
+To tag a set of files:
 
 $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
 
@@ -32,7 +32,7 @@ example:
 
 $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
 
-5.2. To generate a report:
+To generate a report:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
 
