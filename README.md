@@ -20,28 +20,28 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 
 5. Located in the ner_tagger folder, two options can be used::
 
-5.1. To tag a set of files:
+ 5.1. To tag a set of files:
 
-$ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
+ $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
 
---model:  the name of the model to use.
---patterns:  the path to the patterns file
---corpus:  the path to the corpus to tag.
+ --model:  the name of the model to use.
+ --patterns:  the path to the patterns file
+ --corpus:  the path to the corpus to tag.
 
-example:
+ example:
 
-$ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
+ $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
 
-5.2. To generate a report:
+ 5.2. To generate a report:
 
-$ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
+ $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
 
---sorted_by=<rate|index>: Defines the order from highest to lowest of the tagged files, either by rate or entity index.
---entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the type of entity to report. The 'ALL' option is for all kinds of entities.
+ --sorted_by=<rate|index>: Defines the order from highest to lowest of the tagged files, either by rate or entity index.
+ --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the type of entity to report. The 'ALL' option is for all kinds of entities.
 
-example:
+ example:
 
-$ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
+ $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
 
 An example follows:
