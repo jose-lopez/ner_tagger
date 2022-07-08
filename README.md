@@ -20,29 +20,28 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 
 5. Located in the ner_tagger folder, two options can be used::
 
- 5.1. To tag a set of files:
+5.1. To tag a set of files:
 
- $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
+$ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
 
- --model:  the name of the model to use.
- --patterns:  the path to the patterns file
- --corpus:  the path to the corpus to tag.
+--model:  the name of the model to use.
+--patterns:  the path to the patterns file
+--corpus:  the path to the corpus to tag.
+
+example:
+
+  $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
+
+5.2. To generate a report:
+
+$ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
+
+--sorted_by=<rate|index>: Defines the order from highest to lowest of the tagged files, either by rate or entity index.
+--entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the type of entity to report. The 'ALL' option is for all kinds of entities.
 
  example:
 
- $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
-
- 5.2. To generate a report:
-
- $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
-
- --sorted_by=<rate|index>: Defines the order from highest to lowest of the tagged files, either by rate or entity index.
- --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the type of entity to report. The 'ALL' option is for all kinds of entities.
-
- example:
-
- $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
-
+$ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
 An example follows:
 
@@ -72,7 +71,7 @@ In this case the tagged files are sorted by index but the category is PERSON. Th
 
 4. Suppose a report is now requested as follows:
 
- $ python ./src/tagger/report_metrics.py --sorted_by=rate --entity_type=ALL
+$ python ./src/tagger/report_metrics.py --sorted_by=rate --entity_type=ALL
 
 In this case the option 'rate' requests the proportion of sentences that have entities of any kind in the file. Let's say that we have a file with ten sentences and that only two of them have entities; each of the two sentences has six entities. The metrics would be:
 
@@ -81,7 +80,7 @@ entities_rate = 2 /10 = 0.2 (average of sentences that have entities in the file
 
 In the example above the first value talks about the presence as follows
 
- $ python ./src/tagger/report_metrics.py --sorted_by=rate --entity_type=ALL
+$ python ./src/tagger/report_metrics.py --sorted_by=rate --entity_type=ALL
 
 In this case we speak of the proportion of sentences that have entities (of any type) in the file.
 
