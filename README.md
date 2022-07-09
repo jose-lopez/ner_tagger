@@ -25,7 +25,9 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
 
 --model:  the name of the model to use.
---patterns:  the path to the patterns file
+ 
+--patterns:  the path to the patterns file.
+ 
 --corpus:  the path to the corpus to tag.
 
 example:
