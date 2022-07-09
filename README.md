@@ -41,6 +41,7 @@ Different reports are available based on the kind of entity. Below the way we ca
 $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
 
 --sorted_by=<rate|index>: Defines the order of the tagged files from highest to lowest, either by rate or entity index.
+ 
 --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the kind of entity to report. The 'ALL' option is for all kinds of entities.
  
 example:
