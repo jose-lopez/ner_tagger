@@ -56,7 +56,7 @@ A detailed example follows:
 
 $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
 
-The command above will produce a new tagged version of the corpus and it will be stored in 'tagged' folder.
+The command above will produce a new tagged version of the corpus stored in the 'tagged' folder.
 
 2. Suppose we request a report as follows:
 
@@ -70,7 +70,7 @@ G_PERSON_P: 89.01098901098901 G_PLACE_P: 4.945054945054945 ....
 
 In this example, the first value corresponds to the global percentage of the entity PERSON, meaning that 89.01% of the entities in the corpus correspond to that kind of entity. The percentages are indicated in a similar way for the rest of the entities.
 
-Any report file also shows the list of tagged files sorted by index or rate. The option index (named entity_index in the report), offers the average of entities per sentence in a file. Let's say the first file in the report has an entity_index of 2.40625. This means an average of entities for each sentence equal to 2.40625. Note that this average does not distinguish by kind of entity. For a report about a particular kind of entity, run the following command:
+Any report file also shows the name of the tagged files sorted by index or rate. The option index (named entity_index in the report), offers the average of entities per sentence in a file. Let's say the first file in the report has an entity_index of 2.40625. This means an average of entities in each sentence equal to 2.40625. Note that this average does not distinguish by kind of entity. For a report about a particular kind of entity, run the following command:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=PERSON
 
@@ -87,4 +87,4 @@ entities_rate = 2 /10 = 0.2 (average of sentences that have entities in the file
 
 The entities_index talks about how present (on average) the entities are in the sentences of a file. In this example there is an average of 1.2 entities per sentence. On the other hand, the entities_rate talks about how distributed the entities are in the sentences; in other words, the proportion of sentences in the file that have entities.
 
-4. The reports are saved in the ner_tagger/reports folder. The report's name indicates the kind of entity and metric requested, for example: report_ALL_by_index.txt or report_PERSON_by_rate.txt.
+4. The reports are saved in the ner_tagger/reports folder. The report's name indicates the kind of entity and the metric requested, for example: report_ALL_by_index.txt or report_PERSON_by_rate.txt.
