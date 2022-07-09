@@ -82,8 +82,9 @@ $ python ./src/tagger/report_metrics.py --sorted_by=rate --entity_type=ALL
 
 In this example the option 'rate' requests the proportion of sentences that have entities in the file. Let's say that we have a file with ten sentences and that only two of them have entities, six entities each. The metrics would be:
 
-entities_index = 12 / 10 = 1.2 (average of entities per sentence in the file)
-entities_rate = 2 /10 = 0.2 (average of sentences that have entities in the file)
+entities_index = 12 / 10 = 1.2 (average of entities per sentence in the file).
+ 
+entities_rate = 2 /10 = 0.2 (average of sentences that have entities in the file).
 
 The entities_index talks about how present (on average) the entities are in the sentences of a file. In this example there is an average of 1.2 entities per sentence. On the other hand, the entities_rate talks about how distributed the entities are in the file; in other words, the proportion of sentences in the file that have entities.
 
