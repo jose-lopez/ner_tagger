@@ -30,7 +30,7 @@ $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns
  
 --corpus:  the path to the corpus to tag.
 
-example:
+For example:
 
 $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
 
@@ -44,7 +44,7 @@ $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<
  
 --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>: Defines the kind of entity to report. The 'ALL' option is for all kinds of entities.
  
-example:
+For example:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
