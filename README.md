@@ -52,7 +52,7 @@ $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
 A detailed example follows:
 
-1. Supose the tagging of a corpus is ran as follows:
+1. Suppose the tagging of a corpus is ran as follows:
 
 $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/patterns2.1.jsonl --corpus=data/corpus
 
@@ -62,7 +62,7 @@ The command above will produce a new tagged version of the corpus stored in the 
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
-The requested report is saved in reports/report_ALL_by_index.txt and it includes, at the beggining, the global percentages of entities in the entire corpus.
+The requested report is saved in reports/report_ALL_by_index.txt and it includes, at the beginning, the global percentages of entities in the entire corpus.
 
 For example:
 
