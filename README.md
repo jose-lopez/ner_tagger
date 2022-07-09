@@ -38,7 +38,8 @@ $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/pat
 
 Different reports are available based on the kind of entity. Below the way we can run the code to get a report:
 
-$ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
+$ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> \
+                                      --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
 
 --sorted_by=<rate|index>: Defines the order of the tagged files from highest to lowest, either by rate or entity index.
  
