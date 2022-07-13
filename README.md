@@ -8,7 +8,7 @@ spaCy version 3 (https://spacy.io)
 
 Installation and execution:
 
-1. First clone the repository:
+1. Clone the repository:
 
 git clone https://github.com/jose-lopez/ner_tagger.git
 
