@@ -16,7 +16,7 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 
 3. Put the data files in the data/corpus folder.
 
-4. The repository has two scripts of particular interest, ner_tagger.py and report_metrics.py. Ner_tagger.py is for the production of tagged files (saved in the tagged folder). The report_metrics.py script is for the report of some metrics produced according to the kind of entity (saved in the reports folder)
+4. The repository has two scripts of particular interest, ner_tagger.py and report_metrics.py. Ner_tagger.py is for the production of tagged files (saved in the tagged folder). The report_metrics.py script is for the report of some metrics produced according to the kind of entity selected (saved in the reports folder)
 
 5. Options available:
 
@@ -24,11 +24,11 @@ git clone https://github.com/jose-lopez/ner_tagger.git
 
 $ python ./src/tagger/ner_tagger.py --model=<model> --patterns=<file_of_patterns> --corpus=<files_to_tag>
 
---model:  the name of the model to use.
+--model:  the name of the model to use to support the detection of entities.
  
---patterns:  the path to the patterns' file.
+--patterns:  the path to the file containing the patterns that describe the entities' to search for.
  
---corpus:  the path to the corpus to tag.
+--corpus:  the path to the set of files (corpus) to tag.
 
 For example:
 
@@ -36,7 +36,7 @@ $ python ./src/tagger/ner_tagger.py --model=grc_ud_proiel_lg --patterns=data/pat
 
 ----- Producing a report -----
 
-Different reports are available based on the kind of entity. Below the way we can run the code to get a report:
+Different reports are available based on the kind of entity selected. Below the way we can run the code to get a report:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=<rate|index> --entity_type=<ALL|PERSON|PLACE|GROUP|WORK>
 
@@ -62,7 +62,7 @@ The command above will produce a new tagged version of the corpus stored in the 
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=ALL
 
-The requested report is saved in reports/report_ALL_by_index.txt and it includes, at the beginning, the global percentages of entities in the entire corpus, and the listing of the corpus' files' names sorted from highest to lowest based on the index metric (explained below).
+The requested report is saved in reports/report_ALL_by_index.txt and it includes the global percentages of entities in the entire corpus, and the listing of the corpus' files' names sorted from highest to lowest, based on the index metric (explained below).
 
 For example:
 
@@ -70,7 +70,7 @@ G_PERSON_P: 89.01098901098901 G_PLACE_P: 4.945054945054945 ....
 
 In this example, the first value corresponds to the global percentage of the entity PERSON, meaning that 89.01% of the entities in the corpus correspond to that kind of entity. The percentages are indicated in a similar way for the rest of the entities.
 
-Any report file also shows the name of the tagged files sorted by the index or rate metric. The option index (named entity_index in the report), offers the average of entities per sentence in a file. Let's say the first file in the report has an entity_index of 2.40625; this means an average of entities in each sentence equal to 2.40625. Note that this average does not distinguish the kind of entity. For a report about a particular kind of entity, run the following command:
+Any report file also shows the name of the tagged files sorted by the related index or rate metric. The option index (named entity_index in the report), offers the average of entities per sentence in a file. Let's say the first file in the report has an entity_index of 2.40625; this means an average of entities in each sentence equal to 2.40625. Note that this average does not distinguish the kind of entity. For a report about a particular kind of entity, run the following command:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=PERSON
 
