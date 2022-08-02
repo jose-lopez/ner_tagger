@@ -70,7 +70,7 @@ G_PERSON_P: 89.01098901098901 G_PLACE_P: 4.945054945054945 ....
 
 In this example, the first value corresponds to the global percentage of the entity PERSON, meaning that 89.01% of the entities in the corpus correspond to that kind of entity. The percentages are indicated in a similar way for the rest of the entities.
 
-Any report file also shows the name of the tagged files sorted by the related index or rate metric. The option index (named entity_index in the report), offers the average of entities per sentence in a file. Let's say the first file in the report has an entity_index of 2.40625; this means an average of entities in each sentence equal to 2.40625. Note that the average before does not distinguish the kind of entity. For a report about a particular kind of entity, run the following command:
+Any report file also shows the name of the tagged files sorted by the related index or rate metric. The option index (named entity_index in the report), offers the average of entities per sentence in a file. Let's say the first file in the report has an entity_index of 2.40625; this means an average of entities in each sentence equal to 2.40625. Note that the average before does not distinguish the kind of entity. For a report about a particular kind of entity, run the command as follows:
 
 $ python ./src/tagger/report_metrics.py --sorted_by=index --entity_type=PERSON
 
